@@ -74,8 +74,8 @@ export default function ComparisonTable({ comparisons }: ComparisonTableProps) {
           </thead>
           <tbody className="divide-y divide-border">
             {comparisons.map((c, i) => {
-              // SEEDED FAULT: intentionally broken to verify regression test detection
-              const requiredLvl = c.required_level;
+              // Resilient level retrieval: backend returns expected_level, previous frontend used required_level
+              const requiredLvl = c.expected_level ?? c.required_level;
               const requiredText = requiredLvl ? (LEVEL_LABELS[requiredLvl] ?? `L${requiredLvl}`) : "—";
               const candidateText =
                 c.candidate_level != null
