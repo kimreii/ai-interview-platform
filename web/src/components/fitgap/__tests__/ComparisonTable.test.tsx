@@ -15,9 +15,9 @@ describe("ComparisonTable Component", () => {
       {
         skill_label: "React / Frontend Architecture",
         expected_level: 3, // Backend returned field
-        candidate_level: 3,
-        result: "match",
-        delta: 0,
+        candidate_level: 5,
+        result: "exceed",
+        delta: 2,
       },
       {
         skill_label: "System Design",
@@ -30,10 +30,11 @@ describe("ComparisonTable Component", () => {
 
     render(<ComparisonTable comparisons={mockComparisons} />);
 
-    // Verify row 1 (backend expected_level: 3)
+    // Verify row 1 (backend expected_level: 3, candidate: 5)
     const row1 = screen.getByTestId("skill-row-react-/-frontend-architecture");
     expect(row1).toHaveTextContent("L3");
-    expect(screen.getByTestId("result-badge-react-/-frontend-architecture")).toHaveTextContent("Match");
+    expect(row1).toHaveTextContent("L5");
+    expect(screen.getByTestId("result-badge-react-/-frontend-architecture")).toHaveTextContent("Exceeds +2");
 
     // Verify row 2 (legacy required_level: 2 and candidate: 4)
     const row2 = screen.getByTestId("skill-row-system-design");
