@@ -30,12 +30,15 @@ describe("ComparisonTable Component", () => {
 
     render(<ComparisonTable comparisons={mockComparisons} />);
 
-    // Verify row 1
-    expect(screen.getByText("React / Frontend Architecture")).toBeInTheDocument();
+    // Verify row 1 (backend expected_level: 3)
+    const row1 = screen.getByTestId("skill-row-react-/-frontend-architecture");
+    expect(row1).toHaveTextContent("L3");
     expect(screen.getByTestId("result-badge-react-/-frontend-architecture")).toHaveTextContent("Match");
 
-    // Verify row 2
-    expect(screen.getByText("System Design")).toBeInTheDocument();
+    // Verify row 2 (legacy required_level: 2 and candidate: 4)
+    const row2 = screen.getByTestId("skill-row-system-design");
+    expect(row2).toHaveTextContent("L2");
+    expect(row2).toHaveTextContent("L4");
     expect(screen.getByTestId("result-badge-system-design")).toHaveTextContent("Exceeds +2");
   });
 
