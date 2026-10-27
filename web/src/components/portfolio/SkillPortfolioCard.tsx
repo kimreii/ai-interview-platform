@@ -64,14 +64,14 @@ export default function SkillPortfolioCard({
 
         {/* Evidence */}
         {skill.evidence.length > 0 && (
-          <div className="space-y-1.5">
-            <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+          <div className="space-y-2">
+            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
               Evidence from interview
             </span>
-            <ul className="space-y-1">
+            <ul className="space-y-1.5">
               {skill.evidence.map((quote, i) => (
-                <li key={i} className="text-sm text-foreground">
-                  • "{quote}"
+                <li key={i} className="text-sm text-foreground/90 pl-3 py-1 pr-2 border-l-2 border-primary/50 bg-muted/30 rounded-r">
+                  "{quote}"
                 </li>
               ))}
             </ul>

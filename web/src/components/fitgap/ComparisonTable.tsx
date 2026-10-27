@@ -1,4 +1,4 @@
-import { LEVEL_LABELS, FIT_GAP_RESULT_LABELS, FIT_GAP_RESULT_CLASSES } from "@/utils/constants";
+import { LEVEL_LABELS, LEVEL_BADGE_CLASSES, FIT_GAP_RESULT_LABELS, FIT_GAP_RESULT_CLASSES } from "@/utils/constants";
 import { cn } from "@/lib/utils";
 import type { SkillComparison } from "@/types";
 
@@ -91,13 +91,24 @@ export default function ComparisonTable({ comparisons }: ComparisonTableProps) {
                   <td className="px-4 py-3 font-medium text-foreground">
                     {c.skill_label}
                   </td>
-                  <td className="px-4 py-3 text-center text-muted-foreground font-mono text-xs">
-                    {requiredText}
+                  <td className="px-4 py-3 text-center">
+                    <span className="inline-flex items-center justify-center font-mono text-xs font-semibold px-2 py-0.5 rounded bg-muted text-muted-foreground border border-border">
+                      {requiredText}
+                    </span>
                   </td>
                   <td className="px-4 py-3 text-center">
                     {candidateText ? (
                       <span className="inline-flex items-center gap-1.5 font-mono text-xs font-medium">
-                        <span>{candidateText}</span>
+                        <span
+                          className={cn(
+                            "inline-flex items-center justify-center font-mono text-xs font-semibold px-2 py-0.5 rounded border border-black/5",
+                            c.candidate_level && LEVEL_BADGE_CLASSES[c.candidate_level]
+                              ? LEVEL_BADGE_CLASSES[c.candidate_level]
+                              : "bg-muted text-muted-foreground"
+                          )}
+                        >
+                          {candidateText}
+                        </span>
                         {c.is_override && (
                           <span
                             title="Assessor human override applied"
@@ -108,7 +119,7 @@ export default function ComparisonTable({ comparisons }: ComparisonTableProps) {
                         )}
                       </span>
                     ) : (
-                      <span className="text-xs text-muted-foreground italic">
+                      <span className="text-xs text-muted-foreground/80 italic px-2 py-0.5 rounded bg-muted/40">
                         Not assessed
                       </span>
                     )}
