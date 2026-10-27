@@ -79,10 +79,12 @@ To solve the data presentation seam, unassessed skill handling, and UX deficienc
 
 ### A. Core Codebase Changes Shipped
 1. **Frontend (`web/`)**:
-   * **`ComparisonTable.tsx`**: Revamped with resilient dual-field level resolution, semantic badges (`✅ Match`, `⭐ Exceeds`, `⚠️ Gap`, `⚪ Not assessed`), human override tags, and comprehensive summary KPI counters.
+   * **`FitGapReportPage.tsx`**: Upgraded to wide `max-w-5xl` layout, integrated Executive Summary KPI Cards (Role Benchmark, Match Rate % progress bar, Dynamic Fit Status pill, and Skills Breakdown), and editorial styling for AI narratives.
+   * **`ComparisonTable.tsx`**: Revamped with resilient dual-field level resolution, styled level pills using level badge color mappings, semantic badges (`✅ Match`, `⭐ Exceeds`, `⚠️ Gap`, `⚪ Not assessed`), human override tags, and summary KPI counters.
+   * **`PortfolioPage.tsx`**: Upgraded container to `max-w-5xl` enterprise layout, refreshed candidate headers, and polished quote evidence callouts.
+   * **`AssessmentInvitePage.tsx`**: Upgraded to `max-w-5xl` and added 1-click direct `Transcript` action buttons to completed candidate session rows.
    * **`LevelBadge.tsx`**: Enhanced to support null/unassessed levels cleanly with neutral styling and "Unassessed" subtext.
    * **`SkillPortfolioCard.tsx`**: Updated to eliminate forced L1 parsing, highlighting discovered skills and assessor overrides gracefully.
-   * **`FitGapReportPage.tsx`**: Enhanced layout presenting both Culture Fit and Overall Hiring Assessment, plus dashed empty-state cards.
    * **`types/index.ts`**: Aligned TypeScript definitions (`SkillComparison`, `PortfolioSkill.ai_level` supporting `string | number`).
 2. **Backend (`api/`)**:
    * **`FitGap::Engine`**: Added `required_level` and `is_override` to comparison hashes, and guarded `candidate_level - expected_level` against nil values.

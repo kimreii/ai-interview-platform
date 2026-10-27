@@ -253,8 +253,9 @@
     <li><strong>Unassessed Skills:</strong> If a configured skill has 0 probes, it displays a neutral <code>⚪ Not assessed</code> badge in Fit/Gap and <code>— / Unassessed</code> in Portfolio cards. It must never force L1.</li>
     <li><strong>Contract Resilience:</strong> <code>ComparisonTable</code> resolves levels via <code>c.expected_level ?? c.required_level</code>, gracefully defaulting to <code>—</code> if omitted.</li>
     <li><strong>Human Overrides:</strong> Overridden skills show a distinct <code>✏️ Override (AI: LX)</code> tag, preserving auditability between AI and human judgement.</li>
-    <li><strong>Dual Narrative Display:</strong> Culture &amp; Competency Fit and Overall Hiring Assessment render in separate dedicated cards.</li>
-    <li><strong>Empty States:</strong> Empty comparisons render clear guidance with a direct action button to trigger report generation.</li>
+    <li><strong>Executive KPI Header &amp; Responsive Layout:</strong> Wide <code>max-w-5xl</code> layout with Role Benchmark, Match Rate % progress bar, Dynamic Fit Status badge, and Level Badge color pills.</li>
+    <li><strong>Dual Narrative Display:</strong> Culture &amp; Competency Fit and Overall Hiring Assessment render in separate dedicated cards with AI objective synthesis tags.</li>
+    <li><strong>Direct Assessor Navigation:</strong> 1-click direct <code>Transcript</code> access from candidate session list for frictionless review.</li>
   </ul>
 
   <h2>5. Step 5: Monozukuri Implementation &amp; Testing Proofs</h2>
