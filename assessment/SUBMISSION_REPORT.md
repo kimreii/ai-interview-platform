@@ -6,8 +6,9 @@
 ---
 
 ## 1. Executive Summary & Pull Request Link
-* **GitHub Pull Request:** `[Replace with your GitHub Pull Request URL, e.g., https://github.com/rakamindev/ai-interview-platform/pull/X]`
+* **GitHub Pull Request:** [https://github.com/rakamindev/ai-interview-platform/pull/212](https://github.com/rakamindev/ai-interview-platform/pull/212)
 * **Repository:** `github.com/rakamindev/ai-interview-platform`
+
 * **Feature Branch:** `feature/frontend-product-revamp`
 * **Seeded Fault Test Branch:** `scratch/seeded-fault-test`
 * **Focus Area:** Frontend Product Engineering Depth with Essential Backend Contract Alignment (50% Product Impact & Monozukuri Craft, 50% Engineering Execution).
@@ -140,8 +141,10 @@ To fulfill the brief's requirement of proving test reliability:
 ---
 
 ## 6. Step 6: Video Demonstration Walkthrough Script (3–5 Minutes)
+* **Video Demonstration URL:** [https://youtu.be/3N7zA5cx7LQ?si=lJAAG5ZG76GuEvj7](https://youtu.be/3N7zA5cx7LQ?si=lJAAG5ZG76GuEvj7)
 
 Use this structured script when recording your Loom/YouTube walkthrough:
+
 
 * **0:00 - 0:45 | Introduction & First-Principles Problem Framing**
   * Introduce yourself and the role (Fullstack Product Engineer with Frontend depth).
